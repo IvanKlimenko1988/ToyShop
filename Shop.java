@@ -1,24 +1,30 @@
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class Shop<T>{
-    private String shopName;
+public class Shop<T> {
+    private final String shopName;
     private int id;
-    private Map <Integer, String> toyWarehouse;
+    private Map<Integer, String> toyWarehouse;
+
     private Map<T, Integer> toyCount;
 
     /**
      * Конструктор создания магазина
+     *
      * @param name имя магазина
      */
     public Shop(String name) {
         this.shopName = name;
     }
 
-    public Map<Integer, T> getToyCount() {
-        return (Map<Integer, T>) (toyCount = new HashMap<>());
+    public Map<T, Integer> getToyCount() {
+        return new HashMap<>();
     }
+
+    public void getToy(int id) {
+        System.out.println(toyWarehouse.get(id));
+    }
+
 
     public Map<Integer, String> createWarehouse() {
         return toyWarehouse = new HashMap<>();
@@ -28,13 +34,12 @@ public class Shop<T>{
         toyWarehouse.put(id, toyName);
     }
 
-    public void setToyCount(T toy, int count) {
-        toyCount.put(toy, count);
+    public void setToyCount(Map<T, Integer> map, T obj, Integer toyCount) {
+        this.toyCount = map;
+        map.putIfAbsent(obj, toyCount);
     }
 
-    public void getToy(int id) {
-        System.out.println(toyWarehouse.get(id));
-    }
+
 
 
 
@@ -53,7 +58,6 @@ public class Shop<T>{
 так, как Вы поняли задание. Немного менять и отходить от примера выше.
 
      */
-
 
 
 }

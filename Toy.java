@@ -1,5 +1,5 @@
 public class Toy {
-    private String name;
+    private final String name;
 
     public int getDropRate() {
         return dropRate;
