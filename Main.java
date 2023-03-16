@@ -1,34 +1,7 @@
 import java.util.*;
 
-
-public class Game<T> {
-    public String getName() {
-        return name;
-    }
-
-    private final String name;
-    private final List<T> game;
-
-
-    public Game(String name, List<T> items) {
-        this.name = name;
-        this.game = items;
-    }
-
-    public List<T> getGame() {
-        return game;
-    }
-
-
+public class Main {
     public static void main(String[] args) {
-        // Создали игрушки
-
-        //Список игрушек
-
-        //Создали магазин
-
-        //Создали склад и игрушками(ID, Имя игрушки)
-
 
         List<String> menu = List.of("1 - Добавить игрушку",
                 "2 - Наименование товара",

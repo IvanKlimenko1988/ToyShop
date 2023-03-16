@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,17 +22,13 @@ public class PrizeData {
         List<String> lines = new ArrayList<>();
         try {
             File file = new File(fileName);
-            //создаем объект FileReader для объекта File
             FileReader fr = new FileReader(file);
-            //создаем BufferedReader с существующего FileReader для построчного считывания
             BufferedReader reader = new BufferedReader(fr);
-            // считаем сначала первую строку
             String line = reader.readLine();
             if (line != null) {
                 lines.add(line);
             }
             while (line != null) {
-                // считываем остальные строки в цикле
                 line = reader.readLine();
                 if (line != null) {
                     lines.add(line);
@@ -49,9 +44,7 @@ public class PrizeData {
     public void saveAllLines(List<String> lines) {
         try (FileWriter writer = new FileWriter(fileName, false)) {
             for (String line : lines) {
-                // запись всей строки
                 writer.write(line);
-                // запись по символам
                 writer.append('\n');
             }
             writer.flush();
